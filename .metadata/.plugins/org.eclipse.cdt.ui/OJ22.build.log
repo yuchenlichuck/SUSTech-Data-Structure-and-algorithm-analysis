@@ -1,0 +1,9 @@
+11:51:55 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+
+11:51:56 Build Finished (took 1s.396ms)
+

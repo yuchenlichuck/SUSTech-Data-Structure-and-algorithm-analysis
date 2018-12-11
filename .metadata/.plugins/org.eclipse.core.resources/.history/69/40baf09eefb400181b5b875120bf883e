@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main2{
+	public static int commonBinarySearch(int[] arr,int key){
+		int low = 0;
+		int high = arr.length - 1;
+		int middle = 0;		
+		
+		if(key < arr[low] || key > arr[high] || low > high){
+			return -1;				
+		}
+
+		
+		while(low <= high){
+			middle = low+(high-low)*(key-arr[low])/(arr[high]-key);
+			if(arr[middle] > key){
+
+				high = middle - 1;
+			}else if(arr[middle] < key){
+
+				low = middle + 1;
+			}else{
+				return middle;
+			}
+		}
+		
+		return -1;		
+	}
+
+	public static void main(String args[]) {
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
+		for (int i = 0; i < t; i++) {
+		int a=in.nextInt();
+		int b=in.nextInt();
+		int [] arr=new int[a];
+		for(int j=0;j<a;j++){
+			arr[j]=in.nextInt();
+		}
+		if (commonBinarySearch(arr,b)==-1){
+		System.out.println("NO");
+		}else{
+			System.out.println("YES");
+		}
+		}
+	}
+}
+

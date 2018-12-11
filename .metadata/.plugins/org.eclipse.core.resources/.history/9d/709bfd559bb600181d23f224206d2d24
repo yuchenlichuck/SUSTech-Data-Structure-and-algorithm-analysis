@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main43{      
+        public static void main(String[] args)
+        {
+            Scanner in=new Scanner(System.in);
+            int a=in.nextInt();
+            int b=in.nextInt();
+            int[] ar=new int[a+1];
+            for (int i=1;i<=a;i++)
+                       ar[i]=in.nextInt();
+            int sum=0;
+            la:
+            for (int i=1;i<=b;i++) {
+                int x=in.nextInt();
+                int y=in.nextInt();
+                int z=in.nextInt();
+                for (int j=y;j<=z;j++)  {
+                    if (ar[j]>=x) {   
+                        ar[j]-=x;
+                    }else{             
+                            sum=i;break la;
+                    }
+                }
+            }
+            if (sum>0) System.out.printf("%d\n%d\n", -1,sum);
+            else System.out.println(0);
+        }
+    }

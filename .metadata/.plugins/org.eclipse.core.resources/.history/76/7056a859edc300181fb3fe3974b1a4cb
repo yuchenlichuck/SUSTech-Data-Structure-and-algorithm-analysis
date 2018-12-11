@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		int T=in.nextInt();
+		for(int i=0;i<T;i++) {
+			int n=in.nextInt();
+			int m=in.nextInt();
+			int[] a=new int[n];
+			for (int j=0;j<n;j++) {
+			a[j]=in.nextInt();
+			}
+			
+			
+			int sum=0;
+			int um=1;			
+			for(int j=0;j<n-2;j++) {
+				while(a[um]-a[j]<=m && um<=m-1) 
+					um++;
+				um--;
+				
+				sum+=(um-j+1 )*(um-j )/2;
+			}
+			
+			System.out.println(sum);
+	}
+	}
+	
+	
+}

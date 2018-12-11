@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+	
+			public static int A(int up,int bellow)
+			{
+				int result=1;
+				for(int i=up;i>0;i--)
+				{
+					result*=bellow;
+					bellow--;
+				}
+				return result;
+			}
+			
+			public static int C(int up,int below)
+			{
+				int helf=below/2;
+				if(up>helf)
+				{
+					up=below-up;
+				}
+				int denominator=A(up,up);
+				int numerator=A(up,below);
+				return numerator/denominator;
+				
+			}
+
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		int T=in.nextInt();
+		for(int i=0;i<T;i++) {
+			int n=in.nextInt();
+			int m=in.nextInt();
+			int[] a=new int[n];
+			for (int j=0;j<n;j++) {
+			a[j]=in.nextInt();
+			}
+			
+			
+			int sum=0;
+			int um=1;			
+			for(int j=0;j<n-2;j++) {
+				while(a[um]-a[j]<=m && um<=m-1) 
+					um++;
+				um--;
+				sum+=C(2,um-j+1);
+			}
+			
+			System.out.println(sum);
+	}
+	}
+	
+	
+}

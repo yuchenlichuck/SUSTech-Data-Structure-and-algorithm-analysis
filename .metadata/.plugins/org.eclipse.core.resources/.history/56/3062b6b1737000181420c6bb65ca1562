@@ -1,0 +1,409 @@
+
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.corpus.document.sentence.Sentence;
+import com.hankcs.hanlp.corpus.occurrence.Occurrence;
+import com.hankcs.hanlp.corpus.occurrence.TermFrequency;
+import com.hankcs.hanlp.dependency.nnparser.util.math;
+import com.hankcs.hanlp.dictionary.stopword.CoreStopWordDictionary;
+import com.hankcs.hanlp.dictionary.stopword.StopWordDictionary;
+import com.hankcs.hanlp.seg.Segment;
+import com.hankcs.hanlp.seg.common.Term;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.Map.Entry;
+
+import javax.imageio.ImageIO;
+import javax.print.attribute.standard.PrinterLocation;
+
+import org.mozilla.intl.chardet.nsEUCTWVerifier;
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Writer;
+import java.io.ObjectInputStream.GetField;
+import java.io.OutputStream;
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class WordCloudPictureRotatetoo {
+	public static int su;
+ 	public static boolean[][] bound(boolean photo[][]) {
+		for (int i = -450; i <= 450; i++) {
+			int k = (int) (320 * Math.sqrt(1 - (i / (double) 450) * (i / (double) 450)));
+			for (int j = -k; j <= k; j++) {
+				photo[i + 500][j + 330] = true;
+			}
+		}
+
+		return photo;
+
+	}
+
+	public static boolean[][] getPhotoColor(String path) {
+		BufferedImage img = null;
+		int[] rgb = new int[3];
+		try {
+			img = ImageIO.read(new File(path));
+			System.out.println(img.getHeight() + " " + img.getWidth() + " ");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		int width = img.getWidth();
+		int height = img.getHeight();
+		int minX = img.getMinX();
+		int minY = img.getMinY();
+		
+		boolean[][] photo=new boolean[width+200][height+200];
+		for (int y = minY; y < height; y++) {
+			for (int x = minX; x < width; x++) {
+				int pixel = img.getRGB(x, y);
+
+				rgb[0] = (pixel & 0xff0000) >> 16; // r
+				rgb[1] = (pixel & 0xff00) >> 8; // g
+				rgb[2] = (pixel & 0xff);
+				if (rgb[0]>250 && rgb[1]>250 && rgb[2]>250 ) {photo[x][y]=true;su++;}
+			} 
+		}
+	return photo;
+	}
+
+	public static String readFile(String path, String code) {
+		File file = new File(path);
+		FileInputStream is = null;
+		StringBuilder stringBuilder = null;
+		try {
+			if (file.length() != 0) {
+				is = new FileInputStream(file);
+				InputStreamReader streamReader = new InputStreamReader(is, code);
+				BufferedReader reader = new BufferedReader(streamReader);
+				String line;
+				stringBuilder = new StringBuilder();
+				while ((line = reader.readLine()) != null) {
+					stringBuilder.append(line);
+				}
+
+				reader.close();
+				is.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return String.valueOf(stringBuilder);
+	}
+
+	public static String readStopWord(String path) {
+		File file = new File(path);
+		FileInputStream is = null;
+		StringBuilder stringBuilder = null;
+		try {
+			if (file.length() != 0) {
+				is = new FileInputStream(file);
+				InputStreamReader streamReader = new InputStreamReader(is, "GBK");
+				BufferedReader reader = new BufferedReader(streamReader);
+				String line;
+				stringBuilder = new StringBuilder();
+				while ((line = reader.readLine()) != null) {
+					stringBuilder.append(line + "/n");
+				}
+
+				reader.close();
+				is.close();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return String.valueOf(stringBuilder);
+
+	}
+
+	public static void writeFile(String path, List<Cizu> list) {
+		try {
+			Writer writer = new FileWriter(path);
+			BufferedWriter bw = new BufferedWriter(writer);
+			String content = new String();
+			for (Cizu cizu : list) {
+				content += cizu.getStr() + " = " + cizu.getFre() + "\r\n";
+			}
+			bw.write(content);
+			bw.close();
+			writer.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Occurrence occurrence = new Occurrence();
+		Scanner in = new Scanner(System.in);
+		FileCharsetDetector.charSetDetect(args[0]);
+		String coding=FileCharsetDetector.code;
+		System.out.println(coding);
+		if (coding == null ) {System.out.println("Please enter the charset name above:");coding = in.nextLine();}
+		String path = args[0];
+		String sentence = readFile(path, coding);
+		List<Term> termList = HanLP.segment(sentence);
+		CoreStopWordDictionary.apply(termList);
+		System.out.println(sentence);
+		String sen = new String();
+
+		for (Term term : termList) {
+			if (term.word.length()<=1) continue;
+			sen += term.word+" ";
+		}
+		System.out.println(sen);
+		occurrence.addAll(sen);
+		occurrence.compute();
+
+		Set<Map.Entry<String, TermFrequency>> uniGram = occurrence.getUniGram();
+		List<Cizu> list = new ArrayList<Cizu>();
+		for (Map.Entry<String, TermFrequency> entry : uniGram) {
+			TermFrequency termFrequency = entry.getValue();
+			// TermFrequency :public TermFrequency(String term, Integer frequency)
+			String string = termFrequency.getTerm();
+			int frequency = termFrequency.getFrequency();
+			Cizu cizu = new Cizu(string, frequency);
+			list.add(cizu);
+		}
+		Collections.sort((list), new Comparator<Cizu>() {
+			public int compare(Cizu a, Cizu b) {
+				return b.getFre() - a.getFre();
+			}
+		
+		});
+		System.out.println(list);
+		writeFile("output.txt", list);
+		Font font;
+		String pirture=in.nextLine();
+		boolean[][]photo = getPhotoColor(pirture);
+		
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(new File(pirture));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		int width = img.getWidth();
+		int height = img.getHeight();
+		
+		TextBoard tb = new TextBoard(width, height, Color.WHITE);
+		System.out.println("Please write background color: black or white");
+		String co=in.nextLine();
+		Color []colorRandom=new Color[5];
+		if (co.equals("black")||co.equals("BLACK")) {System.out.println("black");tb = new TextBoard(width, height,  Color.BLACK);colorRandom=new Color[] {new Color(244,252,232),new Color(255,255,255),new Color(255,254,237),new Color(250,242,248)};
+		}
+		else {System.out.println("white");colorRandom=new Color[] {new Color(219,144,25),new Color(94,213,209),new Color(26,45,39),new Color(255,110,151),new Color(241,170,166)};
+		}
+		System.out.println("-- Initialized");
+		font = new Font("黑体", Font.PLAIN, 80);
+		
+		Rectangle2D r = tb.getBounds("中文测试", font, 400, 200);
+
+		int x=300;
+		int  y=300;
+		double m = 0;
+		for (Cizu s : list) {
+			m += Math.sqrt(s.getFre()) * (s.getStr().length());
+		}
+		double rate = Math.sqrt((height * width - su ) / m);
+
+
+		
+		int sum = 0;//Calculate
+		//Color []colorRandom=new Color[] {new Color(129,194,214),new Color(217,179,230),new Color(220,247,161),new Color(131,252,161),new Color(129,146,214)};
+		//Color []colorRandom=new Color[] {new Color(1,25,53),new Color(0,52,63),new Color(29,176,184),new Color(55,198,162),new Color(208,233,255)};
+		
+		outer: for (Cizu string : list) {sum++;
+			int fontSize= (int) (Math.sqrt(string.getFre()) * 0.75 * rate);
+			//if (sum<4) {fontSize=(int)1.5*fontSize;}
+			font = new Font("黑体", Font.BOLD, fontSize);
+			r = tb.getBounds(string.getStr(), font, x, y + r.getHeight() - 3);
+			x = new Random().nextInt((int) (width -20 - r.getWidth())) + 10;
+			y = new Random().nextInt((int) (height -20 - r.getHeight())) + 10;
+			System.out.println(x + "  " + y + " " + r.getY());
+			r = tb.getBounds(string.getStr(), font, x - 2, y + r.getHeight() - 4);
+			System.out.println(string.getStr() + r.toString());
+			int n = -1;
+			
+			if (x + r.getWidth() > width) {
+				x = new Random().nextInt((int) (width-100 - r.getWidth())) + 10;
+			}
+			if (y + r.getHeight() > height) {
+				y = new Random().nextInt((int) (height-100 - r.getHeight())) + 10;
+			}
+			if (sum % 100==8) {for (int i = x; i < x + (int) r.getHeight(); i++)
+				for (int j = y; j > y - (int) r.getWidth(); j--) {
+					if (j < 0) {
+						j = 0;
+					}
+					if (i < 0) {
+						i = 0;
+					}
+					if (!photo[i][j]) {
+						continue;
+					} else {
+						n++;
+						if (n >=300) {
+							System.out.println(n + string.getStr() + r.toString());
+							continue outer;
+						}
+						if (x < 10) {
+							x = new Random().nextInt((int) (width-100 - r.getHeight())) + 10;
+							i = x;
+						}
+						if (y < 20) {
+							y = new Random().nextInt((int) (height-100 - r.getWidth())) + 10;
+							j = y;
+						}
+						if (x >  width- r.getHeight()) {
+							x = new Random().nextInt((int) (width-100 - r.getHeight())) + 10;
+							i = x;
+						}
+						if (y > height - r.getWidth()) {
+							y = new Random().nextInt((int) (height-100 - r.getWidth())) + 10;
+							j = y;
+						}
+						if (n % 4 == 0 && x >16) {
+							x -= 10;
+							i -= x;
+							continue;
+						}
+						if (n % 4 == 1 && y >15) {
+							y -= 10;
+							j -= y;
+							continue;
+						}
+						if (n % 4 == 2 && + r.getHeight() < width-40) {
+							x += 20;
+							i = x;
+							continue;
+						}
+						if (n % 4 == 3 && y + r.getWidth() < height-30) {
+							y += 20;
+							j = y;
+						}
+					}
+				}
+			r = tb.getBounds(string.getStr(), font, x - 1, y + r.getWidth() - 4);
+			System.out.println(n+"rotate" + string.getStr() + r.toString());
+			tb.write(string.getStr(), -y, x + (int) r.getHeight(),-90,font, colorRandom[new Random().nextInt(5)]);
+			for (int i = x - 5; i < x + (int) r.getHeight() +8; i++)
+				for (int j = y + 5; j > y - (int) r.getWidth() -7; j--) {
+					photo[i][j] = true;
+				}
+			continue outer;
+			}
+			
+			for (int i = x; i < x + (int) r.getWidth(); i++)
+				for (int j = y; j < y + (int) r.getHeight(); j++) {
+					if (j < 0) {
+						j = 0;
+					}
+					if (i < 0) {
+						i = 0;
+					}
+					if (!photo[i][j]) {
+						continue;
+					} else {
+						n++;
+						if (n >= 100000) {
+							System.out.println(n + string.getStr() + r.toString());
+							continue outer;
+						}
+						if (x < 10) {
+							x = new Random().nextInt((int) (width-100 - r.getWidth())) + 10;
+							i = x;
+						}
+						if (y < 20) {
+							y = new Random().nextInt((int) (height-100 - r.getHeight())) + 10;
+							j = y;
+						}
+						if (x > width-50 - r.getWidth()) {
+							x = new Random().nextInt((int) (width-100 - r.getWidth())) + 10;
+							i = x;
+						}
+						if (y > height - r.getHeight()-20) {
+							y = new Random().nextInt((int) (height-200 - r.getHeight())) + 10;
+							j = y;
+						}
+						if (n % 4 == 0 && x + r.getWidth() < width-50) {
+							x -= 10;
+							i -= x;
+							continue;
+						}
+						if (n % 4 == 1 && y + r.getHeight() < height-30) {
+							y -= 10;
+							j -= y;
+							continue;
+						}
+						if (n % 4 == 2 && x > 0) {
+							x += 20;
+							i = x;
+							continue;
+						}
+						if (n % 4 == 3 && y > 30) {
+							y += 20;
+							j = y;
+							continue;
+						}
+					}
+				}
+			r = tb.getBounds(string.getStr(), font, x - 1, y + r.getHeight() - 4);
+			System.out.println(n + string.getStr() + r.toString());
+			tb.write(string.getStr(), x, y + (int) r.getHeight(),font, colorRandom[new Random().nextInt(4)]);
+			if (x-7<=0) {x=7;}if(y-7<=0) {y=7;}
+			for (int i = x - 7; i < x + (int) r.getWidth() + 7; i++)
+				for (int j = y - 7; j < y + (int) r.getHeight() + 7; j++) {
+					photo[i][j] = true;
+				}
+		}
+
+		
+		System.out.println("-- Written");
+		tb.display();
+		System.out.println("Please write Image storage filename:");
+		String s=in.next();
+		tb.setVisible(false);
+		tb.setVisible(true);
+		BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		tb.paint(bufferedImage.createGraphics());
+		try {
+			ImageIO.write(bufferedImage, "JPG", new File(s));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("-- Displayed (be patient, it's coming ...)");
+
+	}
+}

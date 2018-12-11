@@ -1,0 +1,108 @@
+import java.io.*;
+import java.util.Map;
+import java.util.StringTokenizer;
+import java.util.TreeMap;
+
+public class Main2{      
+    static class Task {
+        public void solve(InputReader in, PrintWriter out) {
+        	int T=in.nextInt();
+            	for(int i=0;i<T;i++) {
+            		TreeMap<Integer, Integer> map=new TreeMap<Integer,Integer>();
+            		int n=in.nextInt();
+            		for(int j=0;j<n;j++) {
+            			int a=in.nextInt();
+            			int b=in.nextInt();
+            			if (a!=0)
+            				map.put(b, a)
+            		}
+                    int m=in.nextInt();
+                    for(int j=0;j<m;j++) {
+                    	int a=in.nextInt();
+                    	int b=in.nextInt();
+    					if (map.containsKey(b)) {   
+    						Integer s = map.get(b);
+    						if(s+a!=0)
+    						map.put(b, s+a);
+    						else {
+    							map.remove(b);
+    						}
+    					}else{if (a!=0)			   
+    						map.put(b, a);
+    					}
+            		}
+                    Map.Entry<Integer , Integer > p=map.firstEntry();
+                    
+                    if(p.getKey()==0)out.print(p.getValue());
+                    else if(p.getKey()==1)
+                    	if(p.getValue()==1)
+                    		out.print("x");
+                    	else out.print(p.getValue()+"x");
+                    else if (p.getValue()==1) {
+                    	out.print("x^"+p.getKey());
+                    	}
+                    else 
+                    	out.printf("%dx^%d",p.getValue(),p.getKey());
+                    map.remove(p.getKey());
+                    
+                    
+                 
+                    if (map.containsKey(1)) {
+                    	Integer s=map.get(1);
+                    	if(s==1)
+                    		out.print("+x");
+                    	if(s==-1)out.println("-x");
+                    	else out.printf("%+dx",s);
+                    	map.remove(1);
+                    }
+                    for (Map.Entry<Integer , Integer > q : map.entrySet()) {
+                    	 if (q.getValue()==1) {
+                        	out.print("+x^"+q.getKey());}
+                    	 if(q.getValue()==-1) {
+                    		 out.print("-x^"+q.getKey());}
+                    	else
+                    		out.printf("%+dx^%d",q.getValue(),q.getKey());;
+            		}
+                    out.println();
+                    }                      
+                            	} 
+    }        
+    
+    static class InputReader {
+        public BufferedReader reader;
+        public StringTokenizer tokenizer;
+
+        public InputReader(InputStream stream) {
+            reader = new BufferedReader(new InputStreamReader(stream), 32768);
+            tokenizer = null;
+        }
+
+        public String next() {
+            while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+                try {
+                    tokenizer = new StringTokenizer(reader.readLine());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            return tokenizer.nextToken();
+        }
+
+        public int nextInt() {
+            return Integer.parseInt(next());
+        }
+        public char[] nextCharArray() {
+            return next().toCharArray();
+        } 
+}
+        public static void main(String[] args)
+        {
+            InputStream inputStream = System.in;
+            OutputStream outputStream = System.out;
+            InputReader in = new InputReader(inputStream);
+            PrintWriter out = new PrintWriter(outputStream);
+            Task solver = new Task();
+            solver.solve(in, out);
+            out.close();
+    }
+}

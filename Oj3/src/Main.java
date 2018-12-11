@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		String lanran="lanran";
+		char [] a=lanran.toCharArray();
+		Scanner in =new Scanner(System.in);
+		int T=in.nextInt();
+		for(int i=0;i<T;i++) {
+			int um=0;
+			String string=in.next();
+			char[] b =string.toCharArray();
+			for (int j=0;j<b.length;j++) {
+							if(	b[j]==a[um]) {
+								um++;
+								if (um==6) {
+									System.out.println("YES");
+									break;
+								}
+							}
+							}	
+			if (um<5) {
+				System.out.println("NO");
+							}
+			
+		}
+		
+	}
+	
+	
+	
+}

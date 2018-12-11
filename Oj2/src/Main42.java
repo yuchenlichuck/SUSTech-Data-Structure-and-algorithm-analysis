@@ -1,0 +1,36 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class Main42{		
+
+	    public static void main(String[] args)
+	    {
+	    	Scanner in=new Scanner(System.in);
+			int a=in.nextInt();
+			int b=in.nextInt();
+			Map<Integer, Integer>map = new TreeMap<Integer, Integer>();
+
+			for (int i=1;i<=a;i++) 
+						map.put(i, in.nextInt());
+			int sum=0;
+				
+			for (int i=1;i<=b;i++) {
+
+				int x=in.nextInt();
+				int y=in.nextInt();
+				int z=in.nextInt();
+				for (int j=y;j<=z;j++)  {
+					if (map.get(j)>=x) {   
+						map.put(j, map.get(j)-x);
+					}else{			   
+						for (int k=j-1;k>=y;k--)
+							map.put(k, map.get(k)+x)
+							;sum++;break;
+					}
+				}
+			}
+			if (sum>0) System.out.printf("%d\n%d", -1,sum);
+			else System.out.println(0);
+		}
+	}

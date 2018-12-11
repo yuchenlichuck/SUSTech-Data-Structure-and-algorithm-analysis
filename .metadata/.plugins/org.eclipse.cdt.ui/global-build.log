@@ -1,0 +1,845 @@
+16:42:43 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+In file included from D:/GitHub/eigen-git-mirror-master/Eigen/Core:15,
+                 from D:/GitHub/eigen-git-mirror-master/Eigen/Dense:1,
+                 from ..\src\algorithm.cpp:10:
+D:/GitHub/eigen-git-mirror-master/Eigen/src/Core/util/DisableStupidWarnings.h:51: warning: ignoring #pragma GCC diagnostic
+D:/GitHub/eigen-git-mirror-master/Eigen/src/Core/util/DisableStupidWarnings.h:54: warning: ignoring #pragma GCC diagnostic
+In file included from D:/GitHub/eigen-git-mirror-master/Eigen/Core:267,
+                 from D:/GitHub/eigen-git-mirror-master/Eigen/Dense:1,
+                 from ..\src\algorithm.cpp:10:
+D:/GitHub/eigen-git-mirror-master/Eigen/src/Core/IndexedView.h:43: internal compiler error: Segmentation fault
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <URL:http://www.mingw.org/bugs.shtml> for instructions.
+14:03:36 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+14:03:38 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+15:58:24 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+15:58:26 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:43:53 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:43:54 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:33:36 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:33:38 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:35:17 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:35:18 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:35:28 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:35:29 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:38:48 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:38:49 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:39:17 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:39:17 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:39:36 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:39:37 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:40:25 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:40:26 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:42:11 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:42:12 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:42:22 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:42:23 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:42:30 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:42:31 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:42:53 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:42:53 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:43:07 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:43:08 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:43:37 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:43:38 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:47:37 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:47:37 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:48:05 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:48:06 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:51:27 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:51:27 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:51:44 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:51:45 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:51:52 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:51:52 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:51:58 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:51:59 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:53:06 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:53:06 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:53:18 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:53:18 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:54:42 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:54:42 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:54:51 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:54:51 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:55:03 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:55:04 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:02:08 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:02:09 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:05:56 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:05:57 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:06:36 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:06:36 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:06:50 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:06:50 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:07:06 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:07:06 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:09:07 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:09:08 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:09:17 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:09:17 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:09:24 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:09:25 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:09:30 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:09:31 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:07 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:08 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:17 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:17 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:27 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:27 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:35 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:35 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:42 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:43 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:21:57 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:21:57 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:03 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:04 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:09 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:09 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:31 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:32 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:42 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:43 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:48 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:48 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:22:55 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:22:56 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:41:21 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:41:23 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:41:36 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:41:36 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:42:52 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:42:53 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:43:40 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:43:41 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:51:47 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:51:48 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:53:44 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:53:44 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:55:30 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:55:31 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:57:14 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:57:14 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:57:30 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:57:31 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:58:44 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:58:45 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:59:14 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:59:14 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+16:59:26 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+16:59:26 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:00:41 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:00:41 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:01:30 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:01:31 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:03:17 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:03:18 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:04:28 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:04:29 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:04:49 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:04:50 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:05:09 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:05:10 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:05:24 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:05:24 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:23:05 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:23:05 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:23:26 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:23:27 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:23:49 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:23:49 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:36:41 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:36:42 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:38:13 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:38:13 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:38:34 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:38:34 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+17:40:42 **** Incremental Build of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+17:40:42 **** Incremental Build of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+11:51:55 **** Rebuild of configuration Debug for project OJ22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Main2.o "..\\Main2.cpp" 
+g++ -o OJ22.exe Main2.o 
+/mingw/lib/libmingw32.a(main.o):main.c:(.text+0x104): undefined reference to `WinMain@16'
+collect2: ld returned 1 exit status
+11:51:57 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'

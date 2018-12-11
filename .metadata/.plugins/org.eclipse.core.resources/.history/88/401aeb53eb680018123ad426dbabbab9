@@ -1,0 +1,163 @@
+
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.corpus.occurrence.Occurrence;
+import com.hankcs.hanlp.corpus.occurrence.TermFrequency;
+import com.hankcs.hanlp.dependency.nnparser.util.math;
+import com.hankcs.hanlp.seg.Segment;
+import com.hankcs.hanlp.seg.common.Term;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.geom.Rectangle2D;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Writer;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+public class DemoSegment
+{
+	 public static String readFile(String path) {
+			File file = new File(path);
+	        FileInputStream is = null;
+	        StringBuilder stringBuilder = null;
+	        try {
+	            if (file.length() != 0) {
+	                is = new FileInputStream(file);
+	                InputStreamReader streamReader = new InputStreamReader(is,"GBK");
+	                BufferedReader reader = new BufferedReader(streamReader);
+	                String line;
+	                stringBuilder = new StringBuilder();
+	                while ((line = reader.readLine()) != null) {
+	                    stringBuilder.append(line);
+	                }
+	                
+	                reader.close();
+	                is.close();
+	            } 
+	     
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            
+	        }
+	        return String.valueOf(stringBuilder);
+
+	    }
+	
+		public static void writeFile(String path,String content){
+			try {
+					Writer writer = new FileWriter(path);
+					BufferedWriter bw = new BufferedWriter(writer);
+					
+					bw.write(content);
+					bw.close();
+					writer.close();
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} 
+	
+    public static void main(String[] args)
+    {
+/*        String[] testCase = new String[]{
+                "商品和服务",
+                "当下雨天地面积水分外严重",
+                "结婚的和尚未结婚的确实在干扰分词啊",
+                "买水果然后来世博园最后去世博会",
+                "中国的首都是北京",
+                "欢迎新老师生前来就餐",
+                "工信处女干事每月经过下属科室都要亲口交代24口交换机等技术性器件的安装工作",
+                "随着页游兴起到现在的页游繁盛，依赖于存档进行逻辑判断的设计减少了，但这块也不能完全忽略掉。",
+        };
+  */   
+        Occurrence occurrence = new Occurrence();
+        String path="data1.txt";
+        String sentence=readFile(path);
+        occurrence.addAll(sentence);
+        occurrence.compute();
+
+        Set<Map.Entry<String, TermFrequency>> uniGram = occurrence.getUniGram();
+        List<Cizu> list= new ArrayList<Cizu>();
+
+        for (Map.Entry<String, TermFrequency> entry : uniGram)
+        {
+        	
+            TermFrequency termFrequency = entry.getValue();
+         
+            //TermFrequency :public TermFrequency(String term, Integer frequency)
+            String string=(termFrequency).toString();
+            String []str =string.split("=");
+            int w=Integer.parseInt(str[1]);
+            Cizu cizu=new Cizu(str[0],w);
+            list.add(cizu);
+        }
+        Collections.sort((list),new Comparator<Cizu>(){ 
+        	public int compare(Cizu a,Cizu b) {
+        		return b.getFre()-a.getFre();
+        	}
+        });
+            
+		Font font;
+        TextBoard tb = new TextBoard(1000, 700, Color.RED);
+        System.out.println("-- Initialized");
+        font = new Font("SansSerif", Font.BOLD, 120);
+        tb.write("Hello", 40, 500, font, Color.YELLOW);
+        font = new Font("黑体", Font.PLAIN, 80);
+        tb.write( "中文测试", 400, 200, 0, font, Color.BLUE, Color.YELLOW );
+        tb.write( "汉字测试", 400, 300, 0, font, Color.BLUE, Color.WHITE );
+
+        Rectangle2D r = tb.getBounds( "中文测试", font, 400, 200);
+        System.out.println( "中文测试" + r.toString() );
+         
+        r = tb.getBounds( "汉字测试", font, 400, 300);
+        System.out.println( "汉字测试" + r.toString() );
+		int x=100;int y=100;int j=0;
+		for (Cizu string :list ) {j++;
+	        font = new Font("黑体", Font.PLAIN,(int)( Math.sqrt(string.getFre())*25));
+			tb.write(string.getStr(), x, y, font, Color.BLUE);
+			System.out.println(x+" "+y);
+	        int y1=(int)( Math.sqrt(string.getFre())*50);//记录一行最大高度
+	       
+            r = tb.getBounds(string.getStr(), font, x, y);
+            System.out.println( string.getStr()+ r.toString() );
+            System.out.println(x+" "+y);
+       // 	r.getMinY()
+	     //   if (x+tb.getX()>1000) {x=0;y+=y1;y1=tb.getHeight();}
+
+		x+=tb.getX();
+		}
+        
+        
+        
+        
+        System.out.println("-- Written");
+        tb.display();
+        System.out.println("-- Displayed (be patient, it's coming ...)");
+        
+        
+        
+        
+       
+      
+        
+//  for(int i =0;i<list.size();i++) {
+  //   	Cizu m = (Cizu)list.get(i);
+   	//System.out.println(m);
+// }
+    }
+}

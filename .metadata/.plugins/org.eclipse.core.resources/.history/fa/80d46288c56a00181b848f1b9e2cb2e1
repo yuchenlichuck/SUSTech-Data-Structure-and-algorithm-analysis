@@ -1,0 +1,219 @@
+
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.corpus.document.sentence.word.Word;
+import com.hankcs.hanlp.corpus.occurrence.Occurrence;
+import com.hankcs.hanlp.corpus.occurrence.TermFrequency;
+import com.hankcs.hanlp.dependency.nnparser.util.math;
+import com.hankcs.hanlp.dictionary.stopword.StopWordDictionary;
+import com.hankcs.hanlp.seg.Segment;
+import com.hankcs.hanlp.seg.common.Term;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
+import javax.imageio.ImageIO;
+import javax.print.attribute.standard.PrinterLocation;
+import javax.swing.text.Position;
+
+import org.mozilla.intl.chardet.nsEUCTWVerifier;
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Label;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Writer;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class DemoSegmentFour
+{
+	 public static String readFile(String path) {
+			File file = new File(path);
+	        FileInputStream is = null;
+	        StringBuilder stringBuilder = null;
+	        try {
+	            if (file.length() != 0) {
+	                is = new FileInputStream(file);
+	                InputStreamReader streamReader = new InputStreamReader(is,"GBK");
+	                BufferedReader reader = new BufferedReader(streamReader);
+	                String line;
+	                stringBuilder = new StringBuilder();
+	                while ((line = reader.readLine()) != null) {
+	                    stringBuilder.append(line);
+	                }
+	                
+	                reader.close();
+	                is.close();
+	            } 
+	     
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            
+	        }
+	        return String.valueOf(stringBuilder);
+
+	    }
+	
+		public static void writeFile(String path,String content){
+			try {
+					Writer writer = new FileWriter(path);
+					BufferedWriter bw = new BufferedWriter(writer);
+					
+					bw.write(content);
+					bw.close();
+					writer.close();
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} 
+		
+/*		  @Override
+		    public void reset() {
+		        placedWordRTree = RTree.maxChildren(4).create();
+		    }
+		  
+		    public boolean place(final Word word) {
+		        final Rectangle wordRectangle = Geometries.rectangle(
+		                word.getPosition().getX(),
+		                word.getPosition().getY(),
+		                word.getPosition().getX() + word.getDimension().getWidth(),
+		                word.getPosition().getY() + word.getDimension().getHeight());
+
+		        final Observable<Entry<String, Rectangle>> results = placedWordRTree.search(
+		                wordRectangle);
+
+		        final int matches = results.count().toBlocking().single();
+		        if (matches > 0) {
+		            return false;
+		        }
+		        placedWordRTree = placedWordRTree.add(word.getWord(), wordRectangle);
+		        return true;
+		    }*/
+		  
+	
+	
+    @SuppressWarnings("unused")
+	public static void main(String[] args) //throws IOException
+    {
+
+        Occurrence occurrence = new Occurrence();
+        String path="data1.txt";
+        String sentence=readFile(path);
+        occurrence.addAll(sentence);
+        occurrence.compute();
+
+        Set<Map.Entry<String, TermFrequency>> uniGram = occurrence.getUniGram();
+        List<Cizu> list= new ArrayList<Cizu>();
+        
+
+    	
+
+        for (Map.Entry<String, TermFrequency> entry : uniGram)
+        {
+        	
+            TermFrequency termFrequency = entry.getValue();
+         
+            //TermFrequency :public TermFrequency(String term, Integer frequency)
+            String string=(termFrequency).toString();
+            String []str =string.split("=");
+            int w=Integer.parseInt(str[1]);
+            Cizu cizu=new Cizu(str[0],w);
+            list.add(cizu);
+        }
+        Collections.sort((list),new Comparator<Cizu>(){ 
+        	public int compare(Cizu a,Cizu b) {
+        		return b.getFre()-a.getFre();
+        	}
+        }); 
+        
+		Font font;				
+        TextBoard tb = new TextBoard(1000, 700, Color.WHITE);
+        System.out.println("-- Initialized");
+        font = new Font("SansSerif", Font.BOLD, 120);
+        font = new Font("黑体", Font.PLAIN, 80);
+
+        Rectangle2D r = tb.getBounds( "中文测试", font, 400, 200);
+        System.out.println( "中文测试" + r.toString() );
+         
+		int x,x1=300;int y=100;
+		double m=0;
+		for (Cizu s:list) {m+=Math.sqrt(s.getFre())*(s.getStr().length());}
+		double rate=Math.sqrt(1000*200/m);
+		System.out.println(rate+"   "+m );
+		double x2 =(500-500*Math.sin(Math.acos(0.7)));
+		
+		x1=(int)x2;
+		x=(int)x2;
+		
+		
+
+		Quadtree quad = new Quadtree(0, new Rectangle(0,0,1000,700));
+		quad.clear();
+
+
+	System.out.println(x);
+	for (Cizu string :list ) {
+	        font = new Font("黑体", Font.PLAIN,(int)( Math.sqrt(string.getFre())*0.75*rate));
+	        int i=0;		int j=0;
+	        do {
+	        x=new Random().nextInt((int)(1000-r.getWidth()));
+	        y=new Random().nextInt((int)(700-r.getHeight()));
+    		r = tb.getBounds(string.getStr(), font, x, y);
+	        Rectangle rectangle= new Rectangle((int)r.getX(),(int)r.getY(),(int) r.getWidth(),(int) r.getHeight());
+	   		List<Rectangle> list1= new ArrayList<>();
+	        List<Rectangle> list2= quad.retrieve(list1, rectangle);
+    		i = list2.size();j++;
+	        }while (i>1 && j<20);
+	        if (j>=20) {System.out.println(string.getStr()+r);continue;}
+	        Rectangle rectangle= new Rectangle((int)r.getX(),(int)r.getY(),(int) r.getWidth(),(int) r.getHeight());
+    		quad.insert(rectangle);
+
+    		
+    		
+    		
+           System.out.println(string.getStr()+ r.toString()) ;
+	        tb.write(string.getStr(), x, y, font,new Color(new Random().nextInt(230)+25,new Random().nextInt(230)+25,new Random().nextInt(230)+25));
+			x+=r.getWidth();
+		
+	}
+	
+	
+	
+/*    File f=new File("1.jpg");
+    try {
+		BufferedImage bImage = ImageIO.read(f);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    	*/
+    
+        System.out.println("-- Written");
+        tb.display();
+        System.out.println("-- Displayed (be patient, it's coming ...)");
+ 
+       
+      
+        
+
+    }
+}

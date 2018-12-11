@@ -1,0 +1,77 @@
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static long Bi(String binStr) {
+		long sum = 0;
+		int len = binStr.length();
+		for (int i = 1; i <= len; i++) {
+			int dt = Integer.parseInt(binStr.substring(i - 1, i));
+			sum += (int) Math.pow(2, len - i) * dt;
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		long a = in.nextLong();
+		long b = in.nextLong();
+
+		ArrayList list = new ArrayList();
+		long i = 2;
+		list.add(1L);
+		list.add(2L);
+		int j = 1;
+		int j1 = 0;
+		long x = 0;
+		if (b == 1) {
+			System.out.println(1);
+			System.exit(0);
+		}
+		if (b == 2) {
+			if (a == 1) {
+				System.out.println(3);
+			}
+			if (a == 2) {
+				System.out.println(2);
+			}
+			;
+			System.exit(0);
+		}
+		while (i <= b && b > 1) {
+			j++;
+			i = (long) list.get(j - 1) + (long) list.get(j - 2);
+			if (i > b)
+				break;
+			list.add(i);
+		}
+		long sum = 0;
+		int l = list.size();
+		for (i = a; i <= b; i++) {
+			int q = l - 1;
+			long s = (long) list.get(l - 1);
+			long t = i;
+			String str = "";
+			while (t >= 0 && q >= 0) {
+				if (t >= s) {
+					t = t - s;
+					str += 1;
+					q--;
+				}
+				q--;
+				if (q == -2)
+					break;
+				if (q == -1) {
+					str += 0;
+					break;
+				}
+				str += 0;
+				s = (long) list.get(q);
+			}
+			sum += Bi(str);
+		}
+		System.out.print(sum);
+	}
+
+}

@@ -1,0 +1,59 @@
+package soo;
+import java.util.Arrays;
+import java.util.ArrayList;
+public class Entropy {
+	private int j=0;
+	private int [] c=new int[27];
+	public static int[] charCount(String s){
+	char[] a=s.toCharArray();
+	char tem=a[0];
+	Arrays.sort(a);
+	for (int i=0;i<s.length();i++){
+		
+		int [] b=new int[27];
+		if (a[i]== tem){b[j]++;}else{j++;b[j]++;tem=a[i];}
+		
+		}
+	}
+	
+	public static double[] normalize(int[] c){
+	for (int k=0;k<j;k++){
+	c[k]=b[k]/(s.length);
+	}
+	
+	public static double entropyOf (double[] p){
+		for (int k=0;k<j;k++){
+	sum+=-c[k]*ln(c[k]);
+	}
+	}
+	
+	public static int[][] charCountArray(String[] a){
+		int z=a.length;int [] num=new int[27];int l=0;
+		for (int x=0;x<z;x++){
+				char[] e=a[x].toCharArray();
+				char tem=e[0];
+				Arrays.sort(e);
+				for (int i=0;i<e.length;i++){
+					if (e[i]== tem){charCountArray[x][((byte)tem)-97]++;}else{charCountArray[x][((byte)tem)-97]++;tem=e[i];
+					num[((byte)e[i-1])-97]++;}
+				num[((byte)e[i])-97]++;
+				}
+		}
+		for (int x = 0;x<z;x++)
+			for (int y=0;y<26;y++)
+				if (num[y]==1) {charCountArray[x][l]=charCountArray[x][y];l++;}
+		return charCountArray;
+	}	
+	
+	public static void main(String[] args){
+	System.out.printf("Character Probabilities in "+args[0]+" :"+Arrays.toString(normalize(charCount(args[0]))));
+	System.out.printf("Entropy of %s :%.3f",args[0],entropyOf(normalize(charCount(args[0]))));
+	System.out.printf("Entropy of %s:%.3f",args[1],entropyOf(normalize(charCount(args[1]))));
+	System.out.printf("Entropy of unique chars in %s:%.3f",args[0],entropyOf(normalize(charCount(args[0]))));
+		printf("Entropy of unique chars in %s:%.3f",args[1],entropyOf(normalize(charCount(args[1]))));
+	}
+	
+
+
+
+}

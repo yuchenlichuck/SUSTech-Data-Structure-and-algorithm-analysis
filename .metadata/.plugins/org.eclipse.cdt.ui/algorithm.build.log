@@ -1,0 +1,9 @@
+11:51:57 **** Rebuild of configuration Debug for project algorithm ****
+Info: Internal Builder is used for build
+g++ "-ID:\\GitHub\\eigen-git-mirror-master" -O2 -g -Wall -c -fmessage-length=0 -o "src\\algorithm.o" "..\\src\\algorithm.cpp" 
+..\src\algorithm.cpp: In function `int main()':
+..\src\algorithm.cpp:19: error: `bs' was not declared in this scope
+..\src\algorithm.cpp:19: warning: unused variable 'bs'
+
+11:51:58 Build Finished (took 1s.87ms)
+

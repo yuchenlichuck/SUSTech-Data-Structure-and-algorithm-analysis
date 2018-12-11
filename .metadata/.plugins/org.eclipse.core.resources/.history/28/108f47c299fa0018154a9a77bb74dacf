@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main2 {
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		int T=in.nextInt();
+		for (int i = 0; i < T; i++) {
+			int n=in.nextInt();
+			int m=in.nextInt();
+			int a[][]=new int[n+12][n+12];
+			for (int j = 0; j < m; j++) {
+				int x=in.nextInt()-1;
+				int y=in.nextInt()-1;
+				int z=in.nextInt();
+				a[x][y]=z;
+				a[y][x]=z;
+				
+			}
+			int cur=0;
+			int min=0;
+			boolean[] visited=new boolean[n];
+			for(int j=0;j<n;j++) {
+				int minin=9876543;
+				int minout=cur;
+				for (int k = 0; k < n; k++) {
+					if (a[cur][k]<=minin && !visited[k]) {
+						minin=a[cur][k];
+						minout=k;
+					}
+					visited[minout]=true;
+					min+=minin;
+					cur=minout;	
+				}
+			}
+						System.out.println(min);
+			
+			
+		}
+	}
+}

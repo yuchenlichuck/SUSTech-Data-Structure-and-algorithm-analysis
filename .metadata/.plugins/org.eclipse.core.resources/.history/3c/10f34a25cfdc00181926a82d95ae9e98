@@ -1,0 +1,79 @@
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class Maind{
+	
+	public class TreeNode{
+		
+		private int mData;
+		private int mParent;
+		private	HashMap<Integer,Integer> map=new HashMap<>();
+		public TreeNode() {
+			mData=0;
+			mParent=0;
+
+		}
+		
+		public TreeNode(int data,int parent)
+		{
+			mData=data;
+			mParent=parent;
+		}
+		
+		public int getData() {
+			return mData;		
+	}
+		public void setData(int data) {
+			mData=data;
+		}
+		public int getParent() {
+			return mParent;
+		}
+		public void setParent(int parent) {
+			mParent=parent;
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		int T=in.nextInt();
+		for(int i=0;i<T;i++) {
+			int n=in.nextInt();
+			HashMap<Integer,Integer> map=new HashMap<>();
+			TreeNode[] arrayTree=new TreeNode[n-1];
+			TreeMap<Integer, Integer> smap=new TreeMap<>();
+			
+			for (int j = 0; j < n-1; j++) {
+				int a=in.nextInt();
+				int b=in.nextInt();
+
+				if (smap.containsKey(b)) {
+					int swap=b;
+					b=a;
+					a=swap;
+				}
+				smap.put(a, 1);
+				smap.put(b, 1);
+				
+				arrayTree[j].setParent(a);
+				arrayTree[j].setData(b);
+			}
+		TreeMap<Integer, Integer> map=new TreeMap<>();
+		for (int j = 0; j < n-1; j++) {
+			map.put(arrayTree[j].getParent(), 1);
+		}
+		
+		for (int j = 1; j < n+1; j++) {
+			if (!map.containsKey(j))
+					{
+				System.out.print(j+" ");
+		
+					}	
+		}
+		System.out.printf("\n");
+		
+		}
+	}
+}

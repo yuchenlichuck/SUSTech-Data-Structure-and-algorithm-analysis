@@ -1,0 +1,54 @@
+package lab;
+
+import java.util.Scanner;
+
+public class Pizza {
+	private String name;
+	private int size;
+	private int price;
+	private double count;
+
+	public double getCount() {
+		return count;
+	}
+	public void setCount(double count) {
+		this.count = count;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public Pizza(String name,int size,int price) {
+		this.name = name;
+		this.size = size;
+		this.price = price;
+		
+	}
+
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		Pizza pizza = new Pizza("Queen", 10, 12);
+		System.out.println(pizza.getPrice());
+		pizza.setPrice(pizza.getPrice() + 5);
+		System.out.println(pizza.getPrice());
+//		Pizza aPizza= new
+//				Pizza(input.next(),input.nextInt(),input.nextInt());
+//				System.out.println("The average price is "+);
+	}
+	
+}

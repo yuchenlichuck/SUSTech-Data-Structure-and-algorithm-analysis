@@ -1,0 +1,69 @@
+import java.util.Scanner;
+public class Main3{
+	public static void main(String args[]) {
+		Scanner in=new Scanner(System.in);
+		int a=in.nextInt();
+		for (int i=0;i<a;i++) {
+			int x=in.nextInt();
+			int y=in.nextInt();
+			int z=in.nextInt();
+			String string1="";
+			String string2="";
+			String str1="";
+			String str2="";
+			String string3="";
+		for (int w=0;w<2*x+1;w++) {
+			string1+=(w % 2==0)?"+":"-";
+			string2+=(w % 2==0)?"/":".";
+			string3+=(w % 2==0)?"|":".";
+		}
+				
+				for(int j=0;j<2*y;j++) {
+					for (int m=0;m<y-j+1;m++ )
+					System.out.print(".");
+					if (j %2 == 0)
+						System.out.print(string1);
+						else System.out.print(string2);
+					String string="";
+					if (j%2==0) {for (int m=0;m<j-1;j++)
+						string+=(m%2==0)?".":"+";
+						System.out.println(string);
+					}
+					else {
+						for (int m=0;m<j-1;j++)
+							string+=(m%2==0)?"|":"/";
+							System.out.println(string);
+						}
+				}
+				for(int j=0;j<2*y;j++) {
+					str1+=(j % 2==0)?".":"+";
+					str2+=(j % 2==0)?"/":"|";
+				}
+				for(int j=0;j<2*z+1;j++){int e=1;
+					if (j<2*z-2*y+1)
+					if (j %2 == 0 )
+						System.out.print(string1+str1);
+						else System.out.print(string3+str2);
+				else {//char[] s1;
+					  //char[] s2;
+					  
+					//	s1=(string1+str1).toCharArray();
+						//s2=(string3+str2).toCharArray();
+						StringBuffer ss1=new StringBuffer(string1+str1);
+						StringBuffer ss2=new StringBuffer(string3+str2);
+						if (j%2==0){
+						ss1.replace(ss1.length()-e, ss1.length()+1-e, ".");
+						e++;
+						System.out.print(ss1);
+				}
+			else{
+						ss2.replace(ss2.length()-e, ss2.length()+1-e, ".");
+						e++;
+						System.out.print(ss2);
+				}
+			
+		}
+	}
+}
+}
+}

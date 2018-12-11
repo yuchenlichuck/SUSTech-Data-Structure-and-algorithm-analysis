@@ -1,0 +1,243 @@
+
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.corpus.occurrence.Occurrence;
+import com.hankcs.hanlp.corpus.occurrence.TermFrequency;
+import com.hankcs.hanlp.dependency.nnparser.util.math;
+import com.hankcs.hanlp.dictionary.stopword.StopWordDictionary;
+import com.hankcs.hanlp.seg.Segment;
+import com.hankcs.hanlp.seg.common.Term;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
+import javax.imageio.ImageIO;
+import javax.print.attribute.standard.PrinterLocation;
+
+import org.mozilla.intl.chardet.nsEUCTWVerifier;
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Writer;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+
+
+
+
+public class DemoSegment
+{
+
+/*	public  String  getContrastYIQ(String hexcolor){
+			
+		int r = parseInt(hexcolor.substr(0,2),16);
+	    int g = parseInt(hexcolor.substr(2,2),16);
+		int b = parseInt(hexcolor.substr(4,2),16);
+		double yiq = ((r*299)+(g*587)+(b*114))/1000;
+		return (yiq >= 128) ? 'black' : 'white';
+	}*/
+	 public static String readFile(String path) {
+			File file = new File(path);
+	        FileInputStream is = null;
+	        StringBuilder stringBuilder = null;
+	        try {
+	            if (file.length() != 0) {
+	                is = new FileInputStream(file);
+	                InputStreamReader streamReader = new InputStreamReader(is,"GBK");
+	                BufferedReader reader = new BufferedReader(streamReader);
+	                String line;
+	                stringBuilder = new StringBuilder();
+	                while ((line = reader.readLine()) != null) {
+	                    stringBuilder.append(line);
+	                }
+	                
+	                reader.close();
+	                is.close();
+	            } 
+	     
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            
+	        }
+	        return String.valueOf(stringBuilder);
+
+	    }
+	
+		public static void writeFile(String path,String content){
+			try {
+					Writer writer = new FileWriter(path);
+					BufferedWriter bw = new BufferedWriter(writer);
+					
+					bw.write(content);
+					bw.close();
+					writer.close();
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} 
+		
+	
+    public static void main(String[] args) //throws IOException
+    {
+
+        Occurrence occurrence = new Occurrence();
+        String path="data1.txt";
+        String sentence=readFile(path);
+        occurrence.addAll(sentence);
+        occurrence.compute();
+
+        Set<Map.Entry<String, TermFrequency>> uniGram = occurrence.getUniGram();
+        List<Cizu> list= new ArrayList<Cizu>();
+        
+
+    	
+
+        for (Map.Entry<String, TermFrequency> entry : uniGram)
+        {
+        	
+            TermFrequency termFrequency = entry.getValue();
+         
+            //TermFrequency :public TermFrequency(String term, Integer frequency)
+            String string=(termFrequency).toString();
+            String []str =string.split("=");
+            int w=Integer.parseInt(str[1]);
+            Cizu cizu=new Cizu(str[0],w);
+            list.add(cizu);
+        }
+        Collections.sort((list),new Comparator<Cizu>(){ 
+        	public int compare(Cizu a,Cizu b) {
+        		return b.getFre()-a.getFre();
+        	}
+        });
+ 
+
+        /*     
+  *       
+        BufferedReader StopWordFileBr;
+		try {
+			StopWordFileBr = new BufferedReader(new InputStreamReader(new FileInputStream(new File("stopwords.txt"))));
+	        HashSet<String> stopWordSet = new HashSet<String>();
+	        String stopWord = null;
+			for(; (stopWord = StopWordFileBr.readLine()) != null;){ stopWordSet.add(stopWord); }
+			
+	        int i=0;
+	        for(Cizu cizu : list){
+	        	i++;String str=cizu.getStr();
+	        	if(stopWordSet.contains(str)){System.out.println(cizu);
+	        	list.remove(i);
+	        	}
+	        	}
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+*/
+
+	
+        	//把过滤后的字符串数组存入到一个字符串中
+        /*	StringBuffer finalStr = new StringBuffer();
+        	for(int i = 0; i<list.size(); i++){
+        	if(list[i] != null){
+        	finalStr = finalStr.append(resultArray[i]).append(" ");
+        	}}*/
+            
+        
+		Font font;
+        TextBoard tb = new TextBoard(1000, 700, Color.WHITE);
+        System.out.println("-- Initialized");
+        font = new Font("SansSerif", Font.BOLD, 120);
+        font = new Font("黑体", Font.PLAIN, 80);
+       // tb.write( "中文测试", 400, 200, 0, font, Color.BLUE, Color.YELLOW );
+     //  tb.write( "汉字测试", 400, 300, 0, font, Color.BLUE, Color.WHITE );
+
+        Rectangle2D r = tb.getBounds( "中文测试", font, 400, 200);
+        System.out.println( "中文测试" + r.toString() );
+         
+    //    r = tb.getBounds( "汉字测试", font, 400, 300);
+      //  System.out.println( "汉字测试" + r.toString() );
+		int x,x1=300;int y=100;
+		double m=0;
+		for (Cizu s:list) {m+=Math.sqrt(s.getFre())*(s.getStr().length());}
+		double rate=Math.sqrt(1000*700/m);
+		System.out.println(rate+"   "+m );
+		double x2 =(500-500*Math.sin(Math.acos(0.7)));
+		
+		x1=(int)x2;
+		x=(int)x2;
+		
+		
+	System.out.println(x);
+	for (Cizu string :list ) {
+	        font = new Font("黑体", Font.PLAIN,(int)( Math.sqrt(string.getFre())*0.75*rate));
+    		r = tb.getBounds(string.getStr(), font, x+=8, y);
+    		if (r.getY()+r.getHeight()>=660) {break;}
+	       if (r.getWidth()+r.getX()>=1000-Math.abs(x1)) {x1=(int)(500-500*Math.sin(Math.acos((350-r.getY()-r.getHeight())/500)));x=Math.abs(x1);y+=r.getHeight()+5;}
+           System.out.println(string.getStr()+ r.toString()) ;
+	        tb.write(string.getStr(), x, y, font,new Color(new Random().nextInt(230)+25,new Random().nextInt(230)+25,new Random().nextInt(230)+25));
+			x+=r.getWidth();
+		
+	}
+	
+	
+	
+    File f=new File("1.jpg");
+    try {
+		BufferedImage bImage = ImageIO.read(f);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    	
+    
+        System.out.println("-- Written");
+        tb.display();
+        System.out.println("-- Displayed (be patient, it's coming ...)");
+        
+        
+        Quadtree quad =new Quadtree(0, new Rectangle(0,0,600,600));
+        
+        
+        
+        
+        BufferedImage bufferedImage =new BufferedImage(1000,700,BufferedImage.TYPE_INT_RGB);
+        tb.paint(bufferedImage.createGraphics());
+        try {
+			ImageIO.write(bufferedImage,"JPG",new File("1.JPG"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    //    quad.clear();for(int i=0;i<allObjects.size();i++) {
+      //  	quad.insert(allObjects.get(i));
+        //}
+       
+      
+        
+//  for(int i =0;i<list.size();i++) {
+  //   	Cizu m = (Cizu)list.get(i);
+   	//System.out.println(m);
+// }
+    }
+}

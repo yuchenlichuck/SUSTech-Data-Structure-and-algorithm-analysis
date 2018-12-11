@@ -1,0 +1,102 @@
+package websites;
+
+import java.sql.*;
+
+public class MySQLDemo {
+ 
+  
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+    static final String DB_URL = "jdbc:mysql://10.20.88.150:3306/s11712116";
+ 
+    
+    static final String USER = "u11712116";
+    static final String PASS = "11712116";
+ 
+    public static void main(String[] args) {
+        Connection conn = null;
+        Statement stmt = null;
+        try{
+         
+            Class.forName("com.mysql.jdbc.Driver");
+        
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+        
+            System.out.println(" 实例化Statement对象...");
+            stmt = conn.createStatement();
+            String sql;
+            // sql = "INSERT 6, name, url FROM websites";
+            
+//            // 3.准备插入的SQL语句
+//            sql = "INSERT INTO websites (id,name,url) " 
+//                   +"VALUES ('7','baidu','baidu.com')";
+//            sql="DELETE FROM websites " +
+//                    "WHERE id = 6";
+//            String sql = "UPDATE websites " +
+//                    "SET url ='www.baidu.com'   WHERE id = 1";
+//            
+            
+
+            sql = "CREATE DATABASE user1";
+            stmt.executeUpdate(sql);
+            
+            sql = "CREATE TABLE user " +
+                    "(id INTEGER not NULL, " +
+                    " username VARCHAR(255), " + 
+                    " passw VARCHAR(255), ";
+            stmt.executeUpdate(sql);
+            sql = "INSERT INTO user" +
+                    "VALUES(1,'yuchenlichuck','sssssssss'";
+            stmt.executeUpdate(sql);
+            
+            sql = "INSERT INTO user " +
+                    "VALUES(2,'y222uchenlichuck','sssss22ssss'";
+            stmt.executeUpdate(sql);
+            sql = "INSERT INTO user " +
+                    "VALUES(3,'yuche2chuck','s1sssssss'";
+            stmt.executeUpdate(sql);
+         
+       System.out.println("Inserted records into the table...");
+            
+       		sql ="SELECT id, username, password FROM user1"
+            ResultSet rs = stmt.executeQuery(sql);
+//            PreparedStatement psql=conn.prepareStatement("insert into emp (id,name,url)"+
+//            "values(?,?,?)");
+//            psql.setInt(1, 6);
+//            psql.setString(2, "百度");
+//
+//            psql.setString(3, "https:s//www.baidu.com");
+//            psql.executeUpdate();
+//            psql.close();
+            while(rs.next()){
+                int id  = rs.getInt("id");
+                String name = rs.getString("name");
+                String url = rs.getString("url");
+                
+                System.out.print("ID: " + id);
+                System.out.print(", 站点名称:" + name);
+                System.out.print(", 站点 URL:" + url);
+                System.out.print("\n");
+            }
+            
+            rs.close();
+            stmt.close();
+            conn.close();
+        }catch(SQLException se){
+            se.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            try{
+                if(stmt!=null) stmt.close();
+            }catch(SQLException se2){
+            }
+            try{
+                if(conn!=null) conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }
+        }
+        System.out.println("Goodbye!");
+    }
+}

@@ -1,0 +1,29 @@
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.List;
+
+public class Time {
+	
+	public static void main(String args[]) {
+		String string="";
+		for(int i=0;i<100000;i++) {
+			string+=i+"\r\n";
+		}
+		try {
+			Writer writer = new FileWriter("ss.txt");
+			BufferedWriter bw = new BufferedWriter(writer);
+			bw.write(string);
+			bw.close();
+			writer.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

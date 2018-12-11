@@ -1,0 +1,33 @@
+package speed1;
+
+import java.util.Scanner;
+
+public class Zeckendorf {
+		public static void main(String[] args) { 
+			Scanner in = new Scanner(System.in);
+	        int a = in.nextInt();int i=0;
+	        int[] arr = new int[a]; 
+	        for (i=0;i<a;i++) {
+	        int b=in.nextInt();
+	        if (b >=1 && b<=100) {
+	        	
+	        
+	        	
+	        } 
+	        else {System.out.println("Invalid Number");
+	        	
+	        	
+	        
+	        
+	        	
+	        }
+		
+		
+		
+		
+		
+		
+		
+		
+		}
+}

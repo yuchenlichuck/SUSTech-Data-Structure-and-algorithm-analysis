@@ -1,0 +1,19 @@
+Finish Reading 
+Andrea,1965,Argentina 
+Patrick,1969,Canada 
+Erik,1988,Canada 
+Rick,1969,Canada 
+Martina,1961,Germany 
+Akshaye,1975,India 
+Preity,1975,India 
+Brad,1963,United States 
+Eli,1972,United States 
+Amole,1962,India 
+Samuel,1965,France 
+Carey,1985,United States 
+Samantha,1983,United States 
+Liya,1984,India 
+Mia,1978,Peru 
+Ziyi,1979,Japan 
+Chris,1971,France 
+Joe,1976,Japan 

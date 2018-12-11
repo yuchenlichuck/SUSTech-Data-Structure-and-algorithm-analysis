@@ -1,0 +1,88 @@
+package soo;
+import java.util.Arrays;
+public class Entropy {
+
+	public static int[] charCount(String s){	
+	char[] a=s.toCharArray();
+	if (s.length()==0 || s==null) {int[]d=new int[0];return d;}
+	Arrays.sort(a);	
+	char tem=a[0];
+	int[]b=new int[s.length()];	
+	int j=0;int z=0;
+	for (int i=0;i<s.length();i++)
+		if (a[i]== tem){z++;}
+		else{j++;b[j-1]=z;z=1;tem=a[i];}
+	b[j]=z;
+	int[]c=new int[j+1];
+	for (int i=0;i<j+1;i++) {
+		c[i]=b[i];
+	}
+	return(c);
+	}
+	
+	public static double[] normalize(int[] c){
+    int w=0;if (c.length==0 || c==null) {double[]q =new double[0];return q;}
+	for (int k=0;k<c.length;k++) {w+=c[k];}
+	double [] b=new double[c.length];
+	for (int k=0;k<c.length;k++){
+	b[k]=(double)c[k]/(w);
+	}
+	return(b);
+	}
+	
+	public static double entropyOf (double[] p){
+		double sum=0;if (p.length==0 || p == null) {return 0;}
+		else {
+		for (int k=0;k<p.length;k++){
+	sum+=-p[k]*(Math.log(p[k]));
+	}return(sum);}
+	}
+
+	public static int[][] charCountArray(String[] a){
+		int z=a.length;
+		int [] num=new int[26];
+		int[][] ar=new int[z][26];
+		if (z==0 || a ==null) {return null;}
+		for (int x=0;x<z;x++){
+				char[] e=a[x].toCharArray();
+				Arrays.sort(e);			
+				if (e.length==0 || e==null) {continue;}
+				char tem=e[0];int z1=0;
+				for (int i=0;i<e.length;i++){
+					if (e[i]== tem){z1++;}
+					else{ar[x][((byte)tem)-97]+=z1;tem=e[i];z1=1;
+					num[((byte)e[i-1])-97]++;}
+				}
+				num[((byte)tem)-97]++;ar[x][((byte)tem)-97]+=z1;
+		}
+		int []q=new int [z];
+		for (int x = 0;x<z;x++)
+			for (int y=0;y<26;y++)
+				if (num[y]==1 && ar[x][y]!=0) {ar[x][q[x]]=ar[x][y];q[x]++;}
+		int[][] aw=new int[z][];
+		for (int x = 0;x<z;x++) {
+		aw[x] =new int[q[x]];}
+		for (int x = 0;x<z;x++)
+			for (int y=0;y<q[x];y++) {
+				aw[x][y]=ar[x][y];}
+		return aw;
+	}	
+	
+	public static void main(String[] args){
+	System.out.print("Character Probabilities in "+args[0]+" :"+Arrays.toString(normalize(charCount(args[0])))+"\n");
+	System.out.printf("Entropy of %s :%.3f \n",args[0],entropyOf(normalize(charCount(args[0]))));
+	System.out.printf("Entropy of %s:%.3f \n",args[1],entropyOf(normalize(charCount(args[1]))));
+	int w=charCountArray(args)[0].length;
+	int[] ar=new int[w];
+	for (int i=0;i<w;i++) {
+		ar[i]=charCountArray(args)[0][i];
+	}
+	System.out.printf("Entropy of unique chars in %s:%.3f \n",args[0],entropyOf(normalize(ar)));
+	w=charCountArray(args)[1].length;
+	ar=new int[w];
+	for (int i=0;i<w;i++) {
+		ar[i]=charCountArray(args)[1][i];
+	}
+	System.out.printf("Entropy of unique chars in %s:%.3f \n",args[1],entropyOf(normalize(ar)));
+	}
+}

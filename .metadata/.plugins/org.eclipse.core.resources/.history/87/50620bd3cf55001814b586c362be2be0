@@ -1,0 +1,73 @@
+package soo;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Entropy {
+
+	public static int[] charCount(String s){
+	char[] a=s.toCharArray();
+	char tem=a[0];
+	Arrays.sort(a);
+	ArrayList b=new ArrayList();	int j=0;int z=0;
+	for (int i=0;i<s.length();i++)
+		if (a[i]== tem){z++;}
+		else{j++;b.add(z);z=1;tem=a[i];System.out.println(b);}
+	b.add(z);int size=b.size();
+	int[] va=new int[size];
+	for (int i = 0;i<size;i++) {
+	va[i]=(int)b.get(i);	}
+	
+
+	return(va);
+	}
+	
+	public static double[] normalize(int[] c){
+    int w=0;
+	for (int k=0;k<c.length;k++) {w++;}
+	double [] b=new double[c.length];
+	for (int k=0;k<c.length;k++){
+	b[k]=c[k]/(w);
+	}
+	return(b);
+	}
+	
+	public static double entropyOf (double[] p){
+		double sum=0;
+		for (int k=0;k<p.length;k++){
+	sum+=-p[k]*(Math.log(p[k]));
+	}
+		return(sum);
+	}
+
+	public static int[][] charCountArray(String[] a){
+		int z=a.length;int [] num=new int[27];int l=0;
+		int[][] ar=new int[z][27];
+		for (int x=0;x<z;x++){
+				char[] e=a[x].toCharArray();
+				char tem=e[0];
+				Arrays.sort(e);
+				for (int i=0;i<e.length;i++){
+					if (e[i]== tem){(ar[x][((byte)tem)-97])++;}
+					else{ar[x][((byte)tem)-97]++;tem=e[i];
+					num[((byte)e[i-1])-97]++;}
+				num[((byte)e[i])-97]++;
+				}
+		}
+		for (int x = 0;x<z;x++)
+			for (int y=0;y<26;y++)
+				if (num[y]==1) {ar[x][l]=ar[x][y];l++;}
+		int[][] aw=new int[z][l];
+		for (int x = 0;x<z;x++)
+			for (int y=0;y<l;y++)
+				aw[x][y]=ar[x][y];
+		return aw;
+	}	
+	
+	public static void main(String[] args){
+	System.out.print("Character Probabilities in "+args[0]+" :"+Arrays.toString(normalize(charCount(args[0])))+"\n");
+	System.out.printf("Entropy of %s :%.3f \n",args[0],entropyOf(normalize(charCount(args[0]))));
+	System.out.printf("Entropy of %s:%.3f \n",args[1],entropyOf(normalize(charCount(args[1]))));
+	System.out.printf("Entropy of unique chars in %s:%.3f \n",args[0],entropyOf(normalize(charCount(args[0]))));
+	System.out.printf("Entropy of unique chars in %s:%.3f \n",args[1],entropyOf(normalize(charCount(args[1]))));
+	}
+}

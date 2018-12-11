@@ -1,0 +1,263 @@
+package lab;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class Main7{
+	class Node{
+		int v;
+		int weight;
+		public Node(int v,int weight) {
+			this.v=v;
+			this.weight=weight;
+		}
+		public int getV() {
+			return v;
+		}
+		public int getWeight() {
+			return weight;
+		}
+	}
+	class Graph{
+		int v;
+		ArrayList<Node>[] list;
+		//@SuppressWarnings("unchecked")
+		public Graph(int v) {
+			this.v=v;
+			list=(ArrayList<Node>[])new ArrayList[v];
+			for (int i = 0; i < v; i++) {
+				list[i]=new ArrayList<>();
+			}
+		}
+		public void addEdge(int u,int v,int weight) {
+			list[u].add(new Node(v,weight));
+		}
+		public void topplpgical(int v,boolean[] visited,Stack<Integer>stack) {
+			visited[v]=true;
+			Stack<Integer> s=new Stack<>();
+			s.push(v);
+			while(!s.isEmpty()) {
+				int vv=s.peek();
+				int sum=0;
+				for(Node node:list[vv]) {	
+					
+				if (!visited[node.getV()]) {
+					s.push(node.getV());
+					visited[node.getV()]=true;
+					break;
+				}
+				sum++;
+				}
+
+				if(sum==list[vv].size()) {
+					stack.push(s.pop());
+				}
+			}
+		}
+		int ssq;
+		public Stack<Integer> longestPath() {
+			Stack<Integer>stack=new Stack<>();
+			ssq=0;
+			boolean[] visited=new boolean[v];
+			for (int i = 0; i < v; i++) {
+				if (!visited[i]) {
+					topplpgical(i, visited, stack);
+					ssq++;
+				}
+			}			
+			return stack;
+		}
+	
+	public long maxmim(Stack<Integer> stack,int s) {
+		long dist[]=new long[v];
+		for (int i = 0; i < v; i++) {
+		dist[i]=Integer.MIN_VALUE;
+		}
+		dist[s]=0;
+		while (!stack.empty()) {
+			int u=stack.pop();
+		if(dist[u]!=Integer.MIN_VALUE)
+			for (Node node:list[u]) {
+				if(dist[node.getV()]<dist[u]+node.getWeight()) {
+					dist[node.getV()]=dist[u]+node.getWeight();
+				}
+			}
+	}
+		
+		long max=Integer.MIN_VALUE;
+		for (int i = 0; i < v; i++) {
+			if (dist[i]>max)
+				max=dist[i];
+		}
+		return max;
+	}
+	}
+	 static class Reader
+     {
+         final private int BUFFER_SIZE = 1 << 16;
+         private DataInputStream din;
+         private byte[] buffer;
+         private int bufferPointer, bytesRead;
+   
+         public Reader()
+         {
+             din = new DataInputStream(System.in);
+             buffer = new byte[BUFFER_SIZE];
+             bufferPointer = bytesRead = 0;
+         }
+   
+         public Reader(String file_name) throws IOException
+         {
+             din = new DataInputStream(new FileInputStream(file_name));
+             buffer = new byte[BUFFER_SIZE];
+             bufferPointer = bytesRead = 0;
+         }
+   
+         public String readLine() throws IOException
+         {
+             byte[] buf = new byte[64]; // line length
+             int cnt = 0, c;
+             while ((c = read()) != -1)
+             {
+                 if (c == '\n')
+                     break;
+                 buf[cnt++] = (byte) c;
+             }
+             return new String(buf, 0, cnt);
+         }
+   
+         public int nextInt() throws IOException
+         {
+             int ret = 0;
+             byte c = read();
+             while (c <= ' ')
+                 c = read();
+             boolean neg = (c == '-');
+             if (neg)
+                 c = read();
+             do
+             {
+                 ret = ret * 10 + c - '0';
+             }  while ((c = read()) >= '0' && c <= '9');
+   
+             if (neg)
+                 return -ret;
+             return ret;
+         }
+         public int nextByte() throws IOException
+         {
+             int ret = 0;
+             byte c = read();
+             while (c <= ' ')
+                 c = read();
+             boolean neg = (c == '-');
+             if (neg)
+                 c = read();
+             do
+             {
+                 ret = ret * 10 + c - '0';
+             }  while ((c = read()) >= '0' && c <= '9');
+   
+             if (neg)
+                 return -ret;
+             return ret;
+         }
+          
+         public long nextLong() throws IOException
+         {
+             long ret = 0;
+             byte c = read();
+             while (c <= ' ')
+                 c = read();
+             boolean neg = (c == '-');
+             if (neg)
+                 c = read();
+             do {
+                 ret = ret * 10 + c - '0';
+             }
+             while ((c = read()) >= '0' && c <= '9');
+             if (neg)
+                 return -ret;
+             return ret;
+         }
+   
+         public double nextDouble() throws IOException
+         {
+             double ret = 0, div = 1;
+             byte c = read();
+             while (c <= ' ')
+                 c = read();
+             boolean neg = (c == '-');
+             if (neg)
+                 c = read();
+   
+             do {
+                 ret = ret * 10 + c - '0';
+             }
+             while ((c = read()) >= '0' && c <= '9');
+   
+             if (c == '.')
+             {
+                 while ((c = read()) >= '0' && c <= '9')
+                 {
+                     ret += (c - '0') / (div *= 10);
+                 }
+             }
+   
+             if (neg)
+                 return -ret;
+             return ret;
+         }
+   
+         private void fillBuffer() throws IOException
+         {
+             bytesRead = din.read(buffer, bufferPointer = 0, BUFFER_SIZE);
+             if (bytesRead == -1)
+                 buffer[0] = -1;
+         }
+   
+         private byte read() throws IOException
+         {
+             if (bufferPointer == bytesRead)
+                 fillBuffer();
+             return buffer[bufferPointer++];
+         }
+   
+         public void close() throws IOException
+         {
+             if (din == null)
+                 return;
+             din.close();
+         }
+     }
+	public static void main(String[] args) throws IOException {
+		Reader in=new Reader();
+		int T=in.nextInt();
+		for (int i = 0; i < T; i++) {
+			int n=in.nextInt();
+			int m=in.nextInt();
+			Graph graph=new Main7().new Graph(n+3);
+			for (int j = 0; j < m; j++) {
+				graph.list[in.nextInt()-1].add(new Main7().new Node(in.nextInt()-1, in.nextInt()));
+			}
+
+			Stack<Integer> stack=graph.longestPath();
+		
+			int ssq=graph.ssq;
+			
+			Stack<Integer> stack1=(Stack<Integer>)stack.clone();
+			ArrayList<Integer> list=new ArrayList<>();
+			for (int j = 0; j < ssq; j++) {
+				graph.list[n].add(new Main7().new Node(stack1.pop(), 0));
+			}
+			long max1=graph.maxmim(stack, n);
+			
+			System.out.println(max1);
+		}
+		
+		
+		
+	}
+}

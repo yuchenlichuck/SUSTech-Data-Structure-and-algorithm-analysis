@@ -1,0 +1,14 @@
+package speed;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		double sp = sc.nextDouble();
+		double v=sp/3.6;
+		
+		System.out.printf("<speed in %.2fkm/h>", sp);
+		
+	
+	}
+}
